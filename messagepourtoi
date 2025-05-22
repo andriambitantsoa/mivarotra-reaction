@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pour Toi - Receive Anonymous Messages</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .logo {
+            font-family: 'Pacifico', cursive;
+        }
+        
+        .message-card {
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+        }
+        
+        .message-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <span class="logo text-2xl font-bold">Pour Toi</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-white hover:text-gray-200">Home</a>
+                    <a href="#" class="text-white hover:text-gray-200">Messages</a>
+                    <a href="#" class="text-white hover:text-gray-200">Profile</a>
+                    <button class="bg-white text-pink-600 px-4 py-2 rounded-full font-medium hover:bg-gray-100 transition duration-300">Sign In</button>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-16 px-4">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 flex flex-col items-start mb-8 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight mb-4">
+                    Receive <span class="text-pink-600">Anonymous</span> Messages
+                </h1>
+                <p class="text-lg text-gray-600 mb-8">
+                    Share your link and let people send you honest messages without revealing their identity.
+                </p>
+                <div class="flex flex-col w-full md:w-4/5">
+                    <div class="relative mb-4">
+                        <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-500" placeholder="Choose your username" />
+                        <span class="absolute right-2 top-3 text-gray-400">.pourtoi.app</span>
+                    </div>
+                    <button class="gradient-bg text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition duration-300 shadow-lg pulse">
+                        Create Your Link
+                    </button>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 floating">
+                    <div class="absolute inset-0 bg-pink-200 rounded-full opacity-20"></div>
+                    <div class="absolute inset-4 bg-pink-300 rounded-full opacity-30"></div>
+                    <div class="absolute inset-8 bg-pink-400 rounded-full opacity-40"></div>
+                    <div class="absolute inset-12 bg-pink-500 rounded-full flex items-center justify-center shadow-xl">
+                        <i class="fas fa-comment-dots text-white text-6xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Why Choose <span class="text-pink-600">Pour Toi</span>?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-xl message-card">
+                    <div class="text-pink-500 mb-4">
+                        <i class="fas fa-user-secret text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">100% Anonymous</h3>
+                    <p class="text-gray-600">
+                        Senders remain completely anonymous. No usernames, no tracking, just honest messages.
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl message-card">
+                    <div class="text-pink-500 mb-4">
+                        <i class="fas fa-shield-alt text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Safe & Secure</h3>
+                    <p class="text-gray-600">
+                        We filter harmful content and provide tools to block abusive senders.
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl message-card">
+                    <div class="text-pink-500 mb-4">
+                        <i class="fas fa-palette text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Customizable</h3>
+                    <p class="text-gray-600">
+                        Personalize your profile with colors, themes, and a custom bio.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-16 gradient-bg text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">How It Works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="flex flex-col items-center text-center">
+                    <div class="bg-white text-pink-500 rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mb-4 shadow-lg">1</div>
+                    <h3 class="text-xl font-semibold mb-2">Create Your Link</h3>
+                    <p>Choose a unique username and get your personal Pour Toi link</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="bg-white text-pink-500 rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mb-4 shadow-lg">2</div>
+                    <h3 class="text-xl font-semibold mb-2">Share It</h3>
+                    <p>Post your link on social media, bio, or send to friends</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="bg-white text-pink-500 rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mb-4 shadow-lg">3</div>
+                    <h3 class="text-xl font-semibold mb-2">Receive Messages</h3>
+                    <p>Read anonymous messages from people who care about you</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">What People Are Saying</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-pink-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold">A</div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Alex</h4>
+                            <p class="text-gray-500 text-sm">Instagram Influencer</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Pour Toi helped me get honest feedback from my followers. I've improved my content based on the anonymous suggestions I received!"
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-pink-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold">S</div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Sophie</h4>
+                            <p class="text-gray-500 text-sm">College Student</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "I was nervous at first, but the sweet anonymous compliments I got really boosted my confidence. Some messages made my day!"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Ready to Discover What People Really Think?</h2>
+            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                Join thousands of users receiving honest feedback and anonymous messages.
+            </p>
+            <button class="gradient-bg text-white px-8 py-4 rounded-lg font-bold text-lg hover:opacity-90 transition duration-300 shadow-lg">
+                Get Started - It's Free
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <span class="logo text-2xl font-bold">Pour Toi</span>
+                    <p class="text-gray-400 mt-2">The anonymous messaging platform</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-tiktok text-xl"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-6 md:mb-0">
+                    <div>
+                        <h4 class="font-semibold mb-4">Product</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white">Features</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Pricing</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-4">Company</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white">About</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Privacy</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Terms</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-4">Support</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white">Help Center</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-4">Legal</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-gray-400 text-sm mt-8">
+                © 2023 Pour Toi. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation for message cards
+        document.querySelectorAll('.message-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Mock function for creating link
+        document.querySelector('button.pulse').addEventListener('click', function() {
+            const usernameInput = document.querySelector('input[type="text"]');
+            if(usernameInput.value.trim() === '') {
+                alert('Please choose a username first!');
+                usernameInput.focus();
+            } else {
+                alert(`Your Pour Toi link is ready: ${usernameInput.value.trim()}.pourtoi.app\n\nCopy it and share with your friends!`);
+            }
+        });
+    </script>
+</body>
+</html>
